@@ -1,0 +1,25 @@
+
+<h2>Event component</h2>
+
+
+
+<button *ngIf="isCollapsed" (click)="toggleCollapse()">Отобразить</button>
+<button *ngIf="!isCollapsed" (click)="toggleCollapse()">Скрить</button>
+
+
+<div *ngIf="!isCollapsed">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est consectetur voluptatem atque nihil voluptatibus nam quibusdam neque corporis ut illum obcaecati, perferendis quam possimus quasi temporibus eos ratione commodi libero?
+    </p>
+</div>
+
+
+
+<hr>
+
+
+
+
+<input [(ngModel)]="text" type="text">
+<h5>{{text}}</h5>
+
