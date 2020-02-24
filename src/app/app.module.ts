@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';//add
+import { HttpClientModule } from '@angular/common/http';//add
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,13 +12,15 @@ import { FormsModule} from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { Routes, RouterModule} from '@angular/router';
+import { CounterComponent } from './counter/counter.component';
+import { UsersComponent } from './users/users.component';
 
 const appRoutes = [
   {path: '', component: ShopComponent},
   {path: 'event', component: EventComponent},
   {path: 'mycomponent', component: MyComponentComponent},
   {path: 'products', component: ProductsComponent},
-  {path: '**', component: NotFoundComponent}
+  {path: '**', component: NotFoundComponent}//add
 ];
 
 @NgModule({
@@ -27,13 +30,16 @@ const appRoutes = [
     ShopComponent,
     ProductsComponent,
     EventComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CounterComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),//add
+    HttpClientModule//add
   ],
   providers: [],
   bootstrap: [AppComponent]
